@@ -43,7 +43,7 @@ export const postRouter = new Hono()
 				id: Number(id),
 			},
 			data: {
-				publish: true,
+				published: true,
 			},
 		});
 		return c.json(publish);
