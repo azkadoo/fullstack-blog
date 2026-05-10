@@ -29,9 +29,9 @@ function Home() {
 		if (!postTitle || !postContent)
 			return alert("Title and Content must be filled.");
 		await createPost(postTitle, postContent);
-		router.invalidate();
 		setPostTitle("");
 		setPostContent("");
+		router.invalidate();
 	}
 
 	return (
