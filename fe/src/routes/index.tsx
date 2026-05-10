@@ -1,14 +1,26 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
+import { getPost } from "#/modules/post/lib/get-posts";
 
-export const Route = createFileRoute('/')({ component: Home })
+export const Route = createFileRoute("/")({
+	component: Home,
+	loader: getPost,
+});
 
 function Home() {
-  return (
-    <div className="p-8">
-      <h1 className="text-4xl font-bold">Welcome to TanStack Start</h1>
-      <p className="mt-4 text-lg">
-        Edit <code>src/routes/index.tsx</code> to get started.
-      </p>
-    </div>
-  )
+	const posts = Route.useLoaderData();
+	console.log(posts);
+
+	return (
+		<div>
+			{posts.map((post) => {
+				return (
+					<div key={post.id}>
+						<div>{post.title}</div>
+						<div>{post.content}</div>
+						<div>{post.published}</div>
+					</div>
+				);
+			})}
+		</div>
+	);
 }
