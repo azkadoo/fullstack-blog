@@ -5,7 +5,7 @@ interface PostCardProps {
 }
 
 export default function PostCard({ title, content, published }: PostCardProps) {
-	<div className={published ? "line-through" : ""}>
+	<div className={published ? "opacity-50" : ""}>
 		<div>{title}</div>
 		<div>{content}</div>
 	</div>;
