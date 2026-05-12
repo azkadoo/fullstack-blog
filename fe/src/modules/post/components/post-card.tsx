@@ -8,7 +8,7 @@ interface PostCardProps {
 export default function PostCard({ title, content, published }: PostCardProps) {
 	return (
 		<div className={published ? "opacity-50" : ""}>
-			<div className="text-blue-950 border border-2 border-blue-200 p-4 min-w-64 grid grid-cols-1 gap-4 rounded-2xl">
+			<div className="text-blue-950 border-2 border-blue-200 p-4 min-w-64 grid grid-cols-1 gap-4 rounded-2xl">
 				<div className="text-2xl font-semibold">{title}</div>
 				<div className="p-2 bg-blue-100 rounded-lg text-blue-950 text-sm">
 					{content}
